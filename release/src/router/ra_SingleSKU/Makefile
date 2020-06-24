@@ -84,7 +84,9 @@ endif
 ifneq ($(SKU_5G_AP),)
 	@install DUMMY_SKU $(SKUDIR)/SingleSKU_5G_AP.dat
 endif
-
+	@install $(BUILD_NAME)/l1profile.dat $(SKUDIR)/l1profile.dat
+	@install $(BUILD_NAME)/SingleSKU_mt7615e-sku.dat $(SKUDIR)/SingleSKU_mt7615e-sku.dat
+	@install $(BUILD_NAME)/SingleSKU_mt7615e-sku-bf.dat $(SKUDIR)/SingleSKU_mt7615e-sku-bf.dat
 else	#RA_SKU==y
 
 ifneq ($(SKU_2G_FCC),)

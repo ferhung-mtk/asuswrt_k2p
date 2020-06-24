@@ -272,15 +272,15 @@ define platformKernelConfig
 			sed -i "/CONFIG_USB_OHCI_LITTLE_ENDIAN/d" $(1); \
 			echo "# CONFIG_USB_OHCI_LITTLE_ENDIAN is not set" >>$(1); \
 			sed -i "/CONFIG_USB_XHCI_HCD/d" $(1); \
-			echo "CONFIG_USB_XHCI_HCD=y" >>$(1); \
+			echo "# CONFIG_USB_XHCI_HCD is not set" >>$(1); \
 			sed -i "/CONFIG_USB_MT7621_XHCI_HCD/d" $(1); \
-			echo "CONFIG_USB_MT7621_XHCI_HCD=y" >>$(1); \
+			echo "# CONFIG_USB_MT7621_XHCI_HCD is not set" >>$(1); \
 			sed -i "/CONFIG_PERIODIC_ENP/d" $(1); \
 			echo "CONFIG_PERIODIC_ENP=y" >>$(1); \
 			sed -i "/CONFIG_XHCI_DEV_NOTE/d" $(1); \
 			echo "CONFIG_XHCI_DEV_NOTE=y" >>$(1); \
 			sed -i "/CONFIG_USB_XHCI_HCD_DEBUGGING/d" $(1); \
-			echo "CONFIG_USB_XHCI_HCD_DEBUGGING=y" >>$(1); \
+			echo "# CONFIG_USB_XHCI_HCD_DEBUGGING is not set" >>$(1); \
 			sed -i "/CONFIG_USB_EHCI_HCD/d" $(1); \
 			echo "# CONFIG_USB_EHCI_HCD is not set" >>$(1); \
 			sed -i "/CONFIG_USB_OHCI_HCD/d" $(1); \

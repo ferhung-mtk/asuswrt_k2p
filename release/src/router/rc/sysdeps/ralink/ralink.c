@@ -2409,6 +2409,9 @@ int gen_ralink_config(int band, int is_iNIC)
 		
 
 		//HT_BSSCoexistence
+#if defined(RTACRH26)
+	fprintf(fp, "HT_BSSCoexistence=%d\n", 0);
+#else
 		if ((wl_bw > 1) && (HTBW_MAX == 1) 
 	#if defined(RTCONFIG_WIRELESSREPEATER) && defined(RTCONFIG_CONCURRENTREPEATER)
 			&& (wlc_express == 0 || (wlc_express - 1) != band)
@@ -2419,7 +2422,7 @@ int gen_ralink_config(int band, int is_iNIC)
 			fprintf(fp, "HT_BSSCoexistence=%d\n", 0);
 		else
 			fprintf(fp, "HT_BSSCoexistence=%d\n", 1);	
-							
+#endif							
 
 	//HT_AutoBA
 	str = nvram_safe_get(strcat_r(prefix, "HT_AutoBA", tmp));
